@@ -1,5 +1,4 @@
 body {
-    color: #333333;
     font-family: Arial, Helvetica, sans-serif;
     /* max-width: 650px; */
     margin: auto;
@@ -8,33 +7,24 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333;
+    background-color: #f1f3f4;
 }
-
 .main-content {
-    /* main content should 
-    take up all leftover space */
     flex-grow: 1; 
 }
-
-.nav-link {
-    color: #888888;
-    margin-right: 16px;
-    text-decoration: none;
+.icon-block {
+  padding: 0 15px;
 }
-
- .icon-block {
-    padding: 0 15px;
-  }
-  .icon-block .material-icons {
-      font-size: inherit;
-  }
-
+.icon-block .material-icons {
+    font-size: inherit;
+}
 .modal { 
     width: 30% !important; 
     height: 75% !important; 
 }  
-
-
 .demo-dfree {
   position: relative;
   width: 690px;

@@ -14,7 +14,7 @@
 	</div>
 	@endif
 
-    @if($blogPost->isFree)
+    @if($blogPost->isFree || $blogPost->isFeatured)
 			<div class="container">
 				<div class="row">
 					<div class="col">

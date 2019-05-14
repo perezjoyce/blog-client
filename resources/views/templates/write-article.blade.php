@@ -20,20 +20,6 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col">
-                <h1>{{ $user->name }}</h1>
-				<h1>{{ $user->email }}</h1>
-				<h1>{{ $user->plan }}</h1>
-			</div>
-		</div>
-		<a class="waves-effect waves-light btn modal-trigger" href="#deleteForm">Deactivate</a>
-		<a class="waves-effect waves-light btn modal-trigger" href="#editProfileForm">Edit Profile</a>
-		<a class="waves-effect waves-light btn" href="{{ url('blogposts') }}">All Articles</a>
-		<a class="waves-effect waves-light btn" href="{{ url('write-blog-post') }}">Write A Blog Post</a>
-	</div>
-
 
 	@if($user->isAdmin)
 		<div class="container">
@@ -181,45 +167,5 @@
 	@endif
 @endsection
 
-<!-- Modal Structure -->
-<div id="deleteForm" class="modal">
-    <div class="modal-content">
-	  <h4>Deactivate Account</h4>
-	  	<p>Are you sure about this?</p>
-        <form action="delete-user" method="post">
-   		@csrf
-            <input type="email" name="email" id="email" placeholder="Email">
-			<input type="password" name="password" id="password" placeholder="Password">
-            <input type="submit" value="Deactivate Now" class='btn'>
-        </form>
-    </div>
-  </div>
-
-
-<!-- Modal Structure -->
-<div id="editProfileForm" class="modal">
-    <div class="modal-content">
-	  <h4>Edit Profile</h4>
-        <form action="edit-user" method="post">
-		   @csrf
-		   	<label>Username</label>
-			<input type="text" name="edit_name" id="edit_name" value="{{ $user->name }}" required>
-			<input type="hidden" name="userId" id="userId" value="{{ $user->_id }}">
-			<input type="hidden" name="edit_role" id="edit_role" value="false">
-			<br>
-			<label>Subscription Plan</label>
-			<select class="browser-default" name="edit_plan" id="edit_plan" required>
-				<option value="{{ $user->plan }}" selected>{{ ucfirst($user->plan) }}</option>
-				@if($user->plan === 'free')
-					<option value="premium">Premium</option>
-				@else
-					<option value="free">Free</option>
-				@endif
-			</select>
-			<br>
-            <input type="submit" value="Apply Changes" class='btn'>
-        </form>
-    </div>
-  </div>
 
   

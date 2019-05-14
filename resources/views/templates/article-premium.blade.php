@@ -15,7 +15,7 @@
 	@endif
 
 	
-    @if($blogPost->isFree === true || $user->isAdmin || $user->plan ==='premium')
+    @if($blogPost->isFree || $user->isAdmin || $user->plan ==='premium')
 		<div class="container">
 			<div class="row">
 				<div class="col">

@@ -2,9 +2,7 @@
     $(function(){
         
         // MATERIALIZE
-        $('.sidenav').sidenav();
-        $('.modal').modal();
-
+        M.AutoInit();
 
         // TINYMCE
         var dfreeHeaderConfig = {
@@ -28,7 +26,6 @@
               'lists',
               'media',
               'table',
-              'textcolor',
               'image',
               'quickbars'
             ],
